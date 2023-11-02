@@ -1,0 +1,1 @@
+SELECT create_date  AS SQLServerStartTime FROM sys.databases WHERE name = 'tempdb';
