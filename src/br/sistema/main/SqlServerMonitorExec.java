@@ -22,9 +22,7 @@ public class SqlServerMonitorExec {
 	public static void main(String[] args) {
 
 		try {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-			SplashScreen splash = new SplashScreen(3000);
-			splash.toFront();
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());			
 
 			MainJan mainJan = new MainJan();
 			mainJan.setState(Frame.NORMAL);

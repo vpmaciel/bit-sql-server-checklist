@@ -1,6 +1,7 @@
 package br.arquitetura;
 
 import java.awt.Cursor;
+import java.awt.Desktop;
 import java.awt.Dimension;
 import java.io.File;
 import java.io.IOException;
@@ -18,7 +19,7 @@ import br.arquitetura.gui.Msg;
 public class Sis {
 	private static final String AppSeparador = System.getProperty("file.separator");
 	private static String caminhoAppRaiz = System.getProperty("user.dir");;
-	private static final String caminhoAppSistema = caminhoAppRaiz + AppSeparador + "clouddb" + AppSeparador;
+	private static final String caminhoAppSistema = caminhoAppRaiz + AppSeparador + "app" + AppSeparador;
 	private static final String caminhoDiretorioApp = caminhoAppSistema + "sqlserver" + AppSeparador;
 	private static final String caminhoDiretorioAppDados = caminhoDiretorioApp + "dados" + AppSeparador;
 	private static final String caminhoDiretorioDadosCsv = caminhoDiretorioAppDados + "csv" + AppSeparador;
@@ -34,32 +35,17 @@ public class Sis {
 	private static Locale locale;
 	private static Dimension tamanhoTela;
 
-	static {
-		locale = new Locale("pt", "BR");
-		Locale.setDefault(locale);
+	static {		
 		tamanhoTela = new Dimension(800, 585);
 		criarDiretorios();
 	}
 
 	public static void abrirDiretorio(String URL) {
-		String text, text2;
-		text = System.getProperty("os.name");
-		text = text.toLowerCase();
-		text2 = URL;
-
-		if (text.contains("linux") && !text2.equals("")) {
-			try {
-				Runtime.getRuntime().exec("konkeror " + URL); // Seu gerenciador de arquivos: konkeror (KDE), dolphin,
-																// nautilus (gnome) e etc
-			} catch (IOException ex) {
-				System.out.println("Gerenciador de arquivos não instalado.");
-			}
-		} else if (text.contains("windows") && !text2.equals("")) {
-			try {
-				Runtime.getRuntime().exec("explorer.exe " + URL); // A url, que no caso é C:/
-			} catch (IOException ex) {
-				System.out.println("Desculpe, falha na execução dessa função!");
-			}
+		File arquivo = new File(URL);
+		try {
+			Desktop.getDesktop().open(arquivo);
+		} catch (IOException ioException) {
+			ioException.printStackTrace();
 		}
 
 	}
@@ -141,7 +127,7 @@ public class Sis {
 	}
 
 	public static Locale getLocale() {
-		return new Locale("pt", "BR");
+		return Locale.getDefault();
 	}
 
 	public static String getNomeHost() {
@@ -153,7 +139,7 @@ public class Sis {
 	}
 
 	public static String getNomeSistema() {
-		return "CLOUDDB";
+		return "SQL SERVER CHECK LIST";
 	}
 
 	public static Cursor getNovaJanelaCursor() {

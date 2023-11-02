@@ -16,7 +16,7 @@ public class HSQLDB {
 
 	private int resultado = 0;
 	private StringBuilder sql = new StringBuilder();
-	private String url = "jdbc:hsqldb:file:clouddb/db_configuracao";
+	private String url = "jdbc:hsqldb:file:app/db_configuracao";
 	private String usuario = "sa";
 	private String senha = "";
 

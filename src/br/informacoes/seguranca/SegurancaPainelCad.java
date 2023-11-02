@@ -90,27 +90,27 @@ public final class SegurancaPainelCad extends JPanel implements Gui {
 
 		add(new JLabel("SERVIDOR"));
 
-		fieldServidor = new JTextField("localhost");
+		fieldServidor = new JTextField();
 		add(fieldServidor);
 
 		add(new JLabel("BANCO DE DADOS"));
 
-		fieldDataBase = new JTextField("tempdb");
+		fieldDataBase = new JTextField();
 		add(fieldDataBase);
 
 		add(new JLabel("PORTA"));
 
-		fieldPorta = new JTextField("1433");
+		fieldPorta = new JTextField();
 		add(fieldPorta);
 
 		add(new JLabel("USUÁRIO"));
 
-		fieldUsuario = new JTextField("sa");
+		fieldUsuario = new JTextField();
 		add(fieldUsuario);
 
 		add(new JLabel("SENHA"));
 
-		fieldSenha = new JTextField("integrator1981");
+		fieldSenha = new JTextField();
 		add(fieldSenha);
 
 		add(new JLabel(""));

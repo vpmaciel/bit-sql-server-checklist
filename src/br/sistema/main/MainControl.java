@@ -132,7 +132,7 @@ public final class MainControl {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			MainControl.getSegurancaJanCad().setTitle(getTitulo("CHECK LIST"));
-			MainControl.getMainJanCad().setTitle(getTitulo("CLOUDDB - SQL SERVER MONITOR"));
+			MainControl.getMainJanCad().setTitle(getTitulo("SQL SERVER MONITOR"));
 		}
 	}
 
